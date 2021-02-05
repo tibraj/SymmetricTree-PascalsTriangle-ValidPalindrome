@@ -7,7 +7,7 @@ function TreeNode(val, left, right) {
 }
 
 const isSymmetric = (root) => isSameTree(root, root);
-cons isSameTree = (p, q) => !p || !q ? p === q : p.val === q.val && isSameTree(p.right, q.left) && isSameTree(p.left, q.right);
+const isSameTree = (p, q) => !p || !q ? p === q : p.val === q.val && isSameTree(p.right, q.left) && isSameTree(p.left, q.right);
 
 //Pascal's Triangle
 
@@ -25,5 +25,17 @@ function pascalTriangle(numRows) {
     return arr;
 }
 
+console.log(pascalTriangle(5));
+
 
 //Valid Palindrome
+
+function isPalindrome(s) {
+    const expression = /[\W_]/g;
+    const lowcaseStr = s.toLowerCase().replace(expression, '');
+    const reverseStr = lowcaseStr.split('').reverse().join('');
+    return lowcaseStr === reverseStr;
+}
+
+console.log(isPalindrome("A man, a plan, a canal: Panama"));
+console.log(isPalindrome("race a car"));
